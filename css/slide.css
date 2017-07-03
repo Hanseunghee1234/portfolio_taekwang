@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.wrap {
+  margin: 0 auto;
+}
+header {
+  font-family: 'Oswald', 'Calibri', 'Malgun Gothic', sans-serif;
+  width: 100%;
+  height: 80px;
+  z-index: 2000;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.nav {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+.nav .logo {
+  height: 43px;
+  width: 63px;
+  position: absolute;
+  left: 27px;
+  top: 18px;
+  z-index: 1100;
+}
+.nav .menu {
+  display: inline-block;
+}
+.nav .menu .gnb {
+  height: 80px;
+  margin: 0 auto;
+}
+.nav .menu .gnb > li {
+  width: 220px;
+  font-weight: 600;
+  font-size: 16px;
+  float: left;
+  text-align: center;
+  /*&:hover{
+            color:#008889;
+            border-bottom: 3px #008889 solid;
+          }*/
+}
+.nav .menu .gnb > li a {
+  height: 80px;
+  line-height: 80px;
+  color: white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  letter-spacing: 0.04em;
+}
+.nav .menu .gnb .snb {
+  background-color: white;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.nav .menu .gnb .snb a {
+  color: black;
+  line-height: 35px;
+}
+.nav .menu .gnb .snb a:hover {
+  color: #008889;
+  transition: all ease-in 0.1s;
+}
+.nav .menu .gnb .snb .first {
+  border-left: 1px #CCC solid;
+}
+.nav .menu .gnb .snb ul {
+  display: inline-block;
+  border-right: 1px #CCC solid;
+}
+.nav .menu .gnb .snb ul li {
+  width: 220px;
+  font-size: 12px;
+  line-height: 35px;
+}
+.nav .menu .gnb .snb ul li:hover {
+  border-bottom: 2px #008889 solid;
+  transition: all ease-in 0.1s;
+}
+.nav .menu_btn {
+  z-index: 5100;
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  padding-right: 50px;
+}
+.nav .menu_btn span {
+  display: inline-block;
+  width: 45px;
+  height: 35px;
+}
+.nav .menu_btn .home {
+  text-align: center;
+  background: black;
+  background-image: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -3px;
+  right: 95px;
+}
+.nav .menu_btn .home:hover {
+  opacity: 0.9;
+  background-color: #666;
+  transition: all ease 0.3s;
+}
+.nav .menu_btn .eng {
+  display: inline-block;
+  background-color: #008889;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+  line-height: 35px;
+  opacity: 0.8;
+  transition: all ease 0.3s;
+  position: absolute;
+  top: -3px;
+  right: 50px;
+}
+.nav .menu_btn .eng:hover {
+  opacity: 1;
+}
+.nav .menu_btn .lines {
+  position: absolute;
+  top: -3px;
+  right: 5px;
+}
+.nav .menu_btn .lines:hover .line1,
+.nav .menu_btn .lines:hover .line3 {
+  animation: longline 1s ease-out both infinite alternate;
+}
+.nav .menu_btn .lines:hover .line2 {
+  animation: shortline 1s ease-out both infinite alternate;
+}
+.nav .menu_btn .lines .line1 {
+  width: 22px;
+  height: 2px;
+  background: #FFF;
+  position: absolute;
+  right: 10px;
+  top: 11px;
+}
+.nav .menu_btn .lines .line2 {
+  width: 16px;
+  height: 2px;
+  background-color: #FFF;
+  position: absolute;
+  right: 10px;
+  top: 19px;
+}
+.nav .menu_btn .lines .line3 {
+  width: 22px;
+  height: 2px;
+  background-color: #FFF;
+  position: absolute;
+  right: 10px;
+  top: 27px;
+}
+.slide {
+  font-family: 'Oswald', 'Calibri', 'Malgun Gothic', sans-serif;
+  height: 850px;
+  text-align: center;
+  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_bg.png') no-repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+.slide .btn .next {
+  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_next.png') no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90px;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  text-indent: -9999px;
+  transition: all 0.1s;
+}
+.slide .btn .prev {
+  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_prev.png') no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50;
+  left: 0;
+  width: 90px;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  text-indent: -9999px;
+  transition: all 0.1s;
+}
+.slide li {
+  display: inline-block;
+}
+.slide li a {
+  position: relative;
+  top: 770px;
+  z-index: 10;
+  display: block;
+  width: 7px;
+  height: 7px;
+  border: 2px #FFF solid;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.slide li > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: none;
+}
+.slide li img {
+  position: relative;
+  top: 200px;
+}
+.slide li cite {
+  font-size: 50px;
+  position: relative;
+  top: 100px;
+  margin-top: 50px;
+  font-style: normal;
+}
+.slide li cite,
+.slide li span {
+  display: block;
+  position: relative;
+  top: 200px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #FFF;
+}
+.slide .on a {
+  background-color: #FFF;
+}
+.slide .on div {
+  display: block;
+}
+footer {
+  position: relative;
+  height: 100%;
+  clear: both;
+}
+footer .top_foot_wrap {
+  height: 30px;
+  background-color: #191919;
+  padding: 20px 0;
+  position: relative;
+}
+footer .top_foot_wrap .top_foot {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  margin-left: -380px;
+}
+footer .top_foot_wrap .top_foot a {
+  position: relative;
+}
+footer .top_foot_wrap .top_foot a:nth-child(2) {
+  margin-left: 400px;
+}
+footer .top_foot_wrap .top_foot a span {
+  display: inline-block;
+  padding: 0 30px;
+  color: #FFF;
+  font-size: 14px;
+  text-align: center;
+}
+footer .top_foot_wrap .top_foot a span:hover {
+  text-decoration: underline;
+}
+footer .top_foot_wrap .top_foot a .icon {
+  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_arr.png') no-repeat right center;
+}
+footer .top_foot_wrap .top_foot a .icon:before {
+  width: 26px;
+  height: 26px;
+  content: "";
+  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat 0 center;
+  position: absolute;
+  top: -2px;
+  left: -8px;
+}
+footer .top_foot_wrap .top_foot a .icon2 {
+  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_arr.png') no-repeat right center;
+}
+footer .top_foot_wrap .top_foot a .icon2:before {
+  width: 26px;
+  height: 26px;
+  content: "";
+  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat 0 center;
+  position: absolute;
+  top: -2px;
+  left: -8px;
+}
+footer .top_foot_wrap .top_foot a .txt {
+  margin-left: 20px;
+}
+footer .down_foot_wrap {
+  background-color: #080808;
+  padding: 60px 0 80px 0;
+}
+footer .down_foot_wrap .down_foot {
+  text-align: center;
+}
+footer .down_foot_wrap .down_foot .foot_logo {
+  display: inline-block;
+}
+footer .down_foot_wrap .down_foot .txt {
+  margin-top: 30px;
+}
+footer .down_foot_wrap .down_foot .txt span {
+  color: #CCC;
+  font-size: 14px;
+}
+footer .down_foot_wrap .down_foot .txt div {
+  font-size: 11px;
+  color: #535353;
+  margin-top: 5px;
+}

@@ -1,0 +1,320 @@
+// out: css/slide.css, sourcemap: false, compress: false
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color:black;}
+ul,ol,li{list-style: none;}
+html, body{width: 100%; height: 100%;}
+
+.wrap{
+    margin: 0 auto;
+}
+header{
+  font-family: 'Oswald','Calibri','Malgun Gothic', sans-serif;
+  width: 100%; height: 80px;
+  z-index: 2000;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed; top:0; left:0;
+}
+.nav{
+  width: 100%; height: 100%;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  &:hover{
+    //overflow: visible;
+    //transition: all ease-out 1s;
+  }
+  .logo{
+    height: 43px; width: 63px;
+    position: absolute; left: 27px; top: 18px;
+    z-index: 1100;
+    //text-align: center;
+  }
+  .menu{
+    display: inline-block;
+    .gnb{
+      height: 80px;
+      margin: 0 auto;
+      >li{
+        width: 220px;
+        font-weight: 600; font-size: 16px;
+        float: left;
+        text-align: center;
+        a{
+          height: 80px;
+          line-height: 80px;
+          color:white;
+          white-space: nowrap; text-overflow: ellipsis; letter-spacing: 0.04em;
+        }
+          /*&:hover{
+            color:#008889;
+            border-bottom: 3px #008889 solid;
+          }*/
+      }
+      .snb{
+        background-color: white;
+        width: 100%; //height: 200%;
+        display: block;
+        text-align: center;
+        a{
+          color:black;
+          line-height: 35px;
+          &:hover{
+            color:#008889;
+            transition: all ease-in 0.1s;
+          }
+        }
+        .first{
+          border-left: 1px #CCC solid;
+        }
+        ul{
+          display: inline-block;
+          border-right: 1px #CCC solid;
+          li{
+            width: 220px;
+            font-size: 12px;
+            line-height: 35px;
+            &:hover{
+              border-bottom: 2px #008889 solid;
+              transition: all ease-in 0.1s;
+            }
+          }
+        }
+      }//snb close
+    }//gnb close
+  }//menu close
+
+
+  .menu_btn{
+    z-index: 5100;
+    position: absolute; top:30%; right: 10px;
+    padding-right: 50px;
+
+    span{
+      display: inline-block;
+      width: 45px;
+      height: 35px;
+    }
+    .home{
+      text-align: center;
+      background: black;
+      background-image: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute; top: -3px; right: 95px;
+      &:hover{
+        opacity: 0.9;
+        background-color: #666;
+        transition: all ease 0.3s;
+      }
+    }
+    .eng{
+      display: inline-block;
+      background-color: #008889;
+      font-size: 13px;
+      color: white;
+      text-align: center;
+      line-height: 35px;
+      opacity: 0.8;
+      transition: all ease 0.3s;
+      position: absolute; top: -3px; right: 50px;
+      &:hover{
+        opacity: 1;
+      }
+    }
+    .lines{
+      position: absolute; top: -3px; right: 5px;
+
+      &:hover{
+        .line1, .line3{
+          animation: longline 1s ease-out both infinite alternate;
+        }
+        .line2{
+          animation: shortline 1s ease-out both infinite alternate;
+        }
+      }
+      .line1{
+        width: 22px;
+        height: 2px;
+        background: #FFF;
+        position: absolute;
+        right: 10px;
+        top: 11px;
+        //transition: all 0.3s ease;
+      }
+      .line2{
+        width: 16px;
+        height: 2px;
+        background-color: #FFF;
+        position: absolute;
+        right: 10px;
+        top: 19px;
+        //transition: all 0.3s ease;
+      }
+      .line3{
+        width: 22px;
+        height: 2px;
+        background-color: #FFF;
+        position: absolute;
+        right: 10px;
+        top: 27px;
+        //transition: all 0.3s ease;
+      }
+    }
+  }
+}//nav close
+
+.slide{
+  font-family: 'Oswald','Calibri','Malgun Gothic', sans-serif;
+  height: 850px;
+  position: relative;
+  text-align: center;
+  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_bg.png') no-repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+
+  .btn{
+    .next{
+      background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_next.png') no-repeat;
+      background-position: center;
+      position: absolute; top: 0; right:0;
+      width: 90px; height: 100%;
+      border: 0; outline: 0;
+      text-indent: -9999px;
+      transition: all 0.1s
+    }
+    .prev{
+      background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_prev.png') no-repeat;
+      background-position: center;
+      position: absolute; top: 50; left:0;
+      width: 90px; height: 100%;
+      border: 0; outline: 0;
+      text-indent: -9999px;
+      transition: all 0.1s
+    }
+  }
+  li{
+    display: inline-block;
+    a{
+      position: relative; top:770px;
+      z-index: 10;
+      display: block;
+      width: 7px; height: 7px;
+      border: 2px #FFF solid;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
+    >div{
+      position: absolute; top:0; left:0;
+      width: 100%; height: 100%;
+      text-align: center;
+      display: none;
+    }
+    img{
+      position: relative;
+      top:200px;
+    }
+    cite{
+      font-size: 50px;
+      position: relative; top:100px;
+      margin-top: 50px;
+      font-style: normal;
+    }
+    cite, span{
+      display: block;
+      position: relative; top:200px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color:#FFF;
+    }
+  }//li close
+  .on{
+    a{
+      background-color: #FFF;
+    }
+    div{display: block;}
+  }
+}
+
+footer{
+  position: relative;
+  height: 100%;
+  clear: both;
+  .top_foot_wrap{
+    height: 30px;
+    background-color: #191919;
+    padding: 20px 0;
+    position: relative;
+
+    .top_foot{
+      display: inline-block;
+      position: absolute; left:50%;
+      margin-left: -380px;
+      a{
+        position: relative;
+        &:nth-child(2){
+          margin-left: 400px;
+        }
+        span{
+          display: inline-block;
+          padding:0 30px;
+          color:#FFF;
+          font-size: 14px;
+          text-align: center;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        .icon{
+          background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_arr.png') no-repeat right center;
+          &:before{
+            width: 26px;
+            height: 26px;
+            content: "";
+            background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat 0 center;
+            position: absolute; top:-2px; left: -8px;
+          }
+        }
+        .icon2{
+          background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_arr.png') no-repeat right center;
+          &:before{
+            width: 26px;
+            height: 26px;
+            content: "";
+            background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat 0 center;
+            position: absolute; top:-2px; left: -8px;
+          }
+        }
+        .txt{
+          margin-left: 20px;
+        }
+      }
+    }//top_foot close
+  }//top_foot_wrap close
+  .down_foot_wrap{
+    background-color: #080808;
+    padding: 60px 0 80px 0;
+    .down_foot{
+      text-align: center;
+      .foot_logo{
+        display: inline-block;
+      }
+      .txt{
+        margin-top: 30px;
+        span{
+          color: #CCC;
+          font-size: 14px;
+        }
+        div{
+          font-size: 11px;
+          color: #535353;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

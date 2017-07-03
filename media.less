@@ -1,0 +1,49 @@
+// out: css/media.css, sourcemap: false, compress: false
+
+@media only screen and (min-width: 1025px) and (max-width:1200px){
+  header{
+    position: static;
+    .menu {width:87%;}
+  }
+  .content{
+    .vd{
+      height: 700px;
+      .text{
+        img{margin: 10px 0 0 50px;; width: 70%;}
+      }
+    }
+  }
+}
+
+@media only screen (min-width:768px) and (max-width:1023px){
+  header{
+    position: static;
+    .nav{
+      .menu {display: none;}
+    }
+  }
+  .content{
+    .vd{
+      height: 650px;
+      .text{
+        img{margin: 10px 0 0 70px; width: 60%;}
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:767px){
+  .content{
+    .vd{
+      height: 480px;
+      .text{
+        img{margin: 20px 0 0 125px; width: 40%;}
+      }
+    }
+    .middle{
+      ul li .text{
+        font-size: 15px;
+      }
+    }
+  }
+}
