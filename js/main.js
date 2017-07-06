@@ -1,4 +1,14 @@
 $(function(){
+    //$('.bar').css('width','0');
+    /*$('#nav .gnb>ul>li').on({
+
+        'mouseenter':function(){
+            $('.bar').css({
+                'left':'248px',
+                'transition':'0.5s'
+            });
+        }
+    })*/
     //---------------hidden nav-------------
     $('#nav .gnb li').on({
         'mouseenter':function(){
@@ -61,11 +71,28 @@ $(function(){
         lastScrollTop = st;
     });
     ///////////////////////////////////////////////
+    //-----------스크롤시 위로버튼 생성
+    $('#scrolltotop').hide();
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {
+            $('#scrolltotop').fadeIn('slow');
+        } else {
+            $('#scrolltotop').fadeOut('slow');
+        }
+    });
+    $('#scrolltotop a').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+    ////////////////////////////////////////
     $('#down_section span').hide();
     var dw = $('#down_section').offset().top-450;
     $(window).scroll(function(){
         var st = $(this).scrollTop();
-        if(st > dw){
+        if(st >= dw){
             $('#down_section span').removeClass('fadeOutRight').addClass('animated fadeInRight').show();
         }
         if(st < dw){

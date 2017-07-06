@@ -7,314 +7,473 @@ a{text-decoration: none; color:black;}
 ul,ol,li{list-style: none;}
 html, body{width: 100%; height: 100%;}
 
-.wrap{
-    margin: 0 auto;
+@hg:227px;
+@mhg:647px;
+.wrap{position: relative;}
+header{font-family: 'Oswald','Malgun Gothic', sans-serif;}
+@keyframes bar {
+    from{left:0px; width: 0px;}
+    to{left:48px; width: 220px;}
 }
-header{
-  font-family: 'Oswald','Calibri','Malgun Gothic', sans-serif;
-  width: 100%; height: 80px;
-  z-index: 2000;
-  margin: 0 auto;
-  text-align: center;
-  position: fixed; top:0; left:0;
+@keyframes barTwo {
+    from{left:48px; width: 0px;}
+    to{left:268px; width: 220px;}
 }
-.nav{
-  width: 100%; height: 100%;
-  background-color: black;
-  position: relative;
-  overflow: hidden;
-  &:hover{
-    //overflow: visible;
-    //transition: all ease-out 1s;
-  }
-  .logo{
-    height: 43px; width: 63px;
-    position: absolute; left: 27px; top: 18px;
-    z-index: 1100;
-    //text-align: center;
-  }
-  .menu{
-    display: inline-block;
-    .gnb{
-      height: 80px;
-      margin: 0 auto;
-      >li{
-        width: 220px;
-        font-weight: 600; font-size: 16px;
-        float: left;
-        text-align: center;
-        a{
-          height: 80px;
-          line-height: 80px;
-          color:white;
-          white-space: nowrap; text-overflow: ellipsis; letter-spacing: 0.04em;
+@keyframes barThree {
+    from{left:268px; width: 0px;}
+    to{left:488px; width: 220px;}
+}
+@keyframes barFour {
+    from{left:488px; width: 0px;}
+    to{left:708px; width: 220px;}
+}
+@keyframes barFive {
+    from{left:708px; width: 0px;}
+    to{left:928px; width: 220px;}
+}
+#nav{
+    width: 100%; height: 80px;
+    background-color: #000;
+    position: fixed;
+    z-index: 99;
+    .bg{
+        width: 100%; height: @hg;
+        display: none; background-color: #FFF;
+        position: absolute; top:80px; left: 0;
+        z-index: -1;
+    }
+    .bar{
+        position: absolute; top: 63px; left: 0;
+        border-bottom: 3px solid #008889;
+        width: 0px; height: 14px;
+        overflow: hidden;
+        //transition: 0.4s ease-out;
+    }
+    .top_header{
+        max-width: 1200px; height: 80px;
+        margin: 0 auto;
+        h1.logo{
+            height: 43px; width: 63px;
+            position: absolute; left: 21px; top: 18px;
+            z-index: 1100;
+            img{width: 100%; height: 100%;}
         }
-          /*&:hover{
-            color:#008889;
-            border-bottom: 3px #008889 solid;
-          }*/
-      }
-      .snb{
-        background-color: white;
-        width: 100%; //height: 200%;
-        display: block;
-        text-align: center;
-        a{
-          color:black;
-          line-height: 35px;
-          &:hover{
-            color:#008889;
-            transition: all ease-in 0.1s;
-          }
-        }
-        .first{
-          border-left: 1px #CCC solid;
-        }
-        ul{
-          display: inline-block;
-          border-right: 1px #CCC solid;
-          li{
-            width: 220px;
-            font-size: 12px;
-            line-height: 35px;
-            &:hover{
-              border-bottom: 2px #008889 solid;
-              transition: all ease-in 0.1s;
+        .gnb{
+            width: 100%;height: 80px;
+            float: left;
+            display: inline-block;
+            text-transform: uppercase;
+            position: relative;
+            >ul{
+                display: block;
+                position: relative;
+                text-align: center;
+                >li{
+                    display: inline-block;
+                    width: 220px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin-left: -3px;
+                    &:hover{
+                        .bar{animation: bar 0.3s ease-out both normal;}
+                    }
+                    &:nth-child(2){
+                        &:hover{
+                            .bar{animation: barTwo 0.3s ease-out both normal;}
+                        }
+                    }
+                    &:nth-child(3){
+                        &:hover{
+                            .bar{animation: barThree 0.3s ease-out both normal;}
+                        }
+                    }
+                    &:nth-child(4){
+                        &:hover{
+                            .bar{animation: barFour 0.3s ease-out both normal;}
+                        }
+                    }
+                    &:nth-child(5){
+                        &:hover{
+                            .bar{animation: barFive 0.3s ease-out both normal;}
+                        }
+                    }
+                    >a{
+                        display: inline-block;
+                        height: 80px;
+                        line-height: 80px;
+                        color:#FFF;
+                        white-space: nowrap; text-overflow: ellipsis; letter-spacing: 0.04em;
+                        &:hover{
+                            color:#008889;
+                            transition: all ease-in 0.3s;
+                        }
+                    }
+                }
             }
-          }
+            .snb_wrap{
+                display: none;
+                background-color: #FFF;
+                width: 100%;
+                margin: 0 auto;
+                border-left: 1px #ededed solid;
+                //&:last-child{border-right: 1px #ededed solid;}
+                .snb{
+                    max-width: 1200px;
+                    height: @hg;
+                    overflow: hidden;
+                    z-index: 111;
+                    position: relative;
+                    margin: 0 auto;
+                    ul{
+                        display: inline-block;
+                        li{
+                            width: 220px; height: 40px;
+                            float: none;
+                            font-size: 14px;
+                            &:first-child{margin-top: 20px;}
+                            &:hover{
+                                transition: all ease-in 0.3s;
+                            }
+                            a{
+                                display: block;
+                                line-height: 40px;
+                                height: 40px;
+                                color:#000;
+                                font-weight: normal;
+                                font-family: 'Nanum Gothic',sans-serif;
+                                &:hover{
+                                    border-bottom: 1px #008889 solid;
+                                    color:#008889;
+                                    transition: all ease-in 0.3s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }//snb_wrap close
+        }//gnb close
+        .gnb2{
+            #gnb_right{
+                //display: none;
+                width: 240px; height: 100%;
+                background-color: #FFF;
+                position: fixed; right: -240px;
+                transition: 0.3s ease-out;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                z-index: 3000;
+                li{
+                    display: block;
+                    width: 100%;
+                    border-bottom: 1px #CCC solid;
+                    float: left;
+                    a{
+                        display: block;
+                        span{
+                            display: block;
+                            padding: 26px 25px 24px 17px;
+                        }
+                        font-size: 14px;
+                        line-height: 1.3em;
+                        i{position: absolute; right: 10px;}
+                    }
+                }
+                .hidden_slide{
+                    display: none;
+                    li{
+                        border: 0;
+                        border-top: 1px #ccc solid;
+                        background-color: #eee;
+                        padding: 10px 25px 10px 17px;
+                        a{
+                            font-size: 14px;
+                            &:hover{color:#666; transition: 0.3s;}
+                        }
+                    }
+                }
+            }
         }
-      }//snb close
-    }//gnb close
-  }//menu close
-
-
-  .menu_btn{
-    z-index: 5100;
-    position: absolute; top:30%; right: 10px;
-    padding-right: 50px;
-
-    span{
-      display: inline-block;
-      width: 45px;
-      height: 35px;
-    }
-    .home{
-      text-align: center;
-      background: black;
-      background-image: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      position: absolute; top: -3px; right: 95px;
-      &:hover{
-        opacity: 0.9;
-        background-color: #666;
-        transition: all ease 0.3s;
-      }
-    }
-    .eng{
-      display: inline-block;
-      background-color: #008889;
-      font-size: 13px;
-      color: white;
-      text-align: center;
-      line-height: 35px;
-      opacity: 0.8;
-      transition: all ease 0.3s;
-      position: absolute; top: -3px; right: 50px;
-      &:hover{
-        opacity: 1;
-      }
-    }
-    .lines{
-      position: absolute; top: -3px; right: 5px;
-
-      &:hover{
-        .line1, .line3{
-          animation: longline 1s ease-out both infinite alternate;
+        .menu_btn{
+            z-index: 999;
+            position: absolute; top:27px; right: 8px;
+            padding-right: 50px;
+            span{display: inline-block; text-align: center;}
+            .home{
+                width: 40px; height: 35px;
+                background: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png') no-repeat center;
+                background-color: #222;
+                position: absolute; top: -3px; right: 99px;
+                &:hover{
+                    opacity: 0.9;
+                    background-color: #555;
+                    transition: all ease 0.3s;
+                }
+            }
+            .eng{
+                width: 45px; height: 35px;
+                background-color: #086c6d;
+                font-size: 13px; color: #FFF;
+                line-height: 35px;
+                transition: all ease 0.3s;
+                position: absolute; top: -3px; right: 54px;
+                font-family: 'Roboto', sans-serif;
+                &:hover{
+                    background-color: #199394;
+                }
+            }
+            .lines{
+                position: absolute; top: -3px; right: 5px;
+                width: 40px; height: 36px;
+                &:hover{
+                    .line1, .line3{
+                        animation: longline 1s ease-out both infinite alternate;
+                    }
+                    .line2{
+                        animation: shortline 1s ease-out both infinite alternate;
+                    }
+                }
+                .line1{
+                    width: 22px;
+                    height: 2px;
+                    background: #FFF;
+                    position: absolute;
+                    right: 10px;
+                    top: 11px;
+                }
+                .line2{
+                    width: 16px;
+                    height: 2px;
+                    background-color: #FFF;
+                    position: absolute;
+                    right: 10px;
+                    top: 19px;
+                }
+                .line3{
+                    width: 22px;
+                    height: 2px;
+                    background-color: #FFF;
+                    position: absolute;
+                    right: 10px;
+                    top: 27px;
+                }
+            }
         }
-        .line2{
-          animation: shortline 1s ease-out both infinite alternate;
-        }
-      }
-      .line1{
-        width: 22px;
-        height: 2px;
-        background: #FFF;
-        position: absolute;
-        right: 10px;
-        top: 11px;
-        //transition: all 0.3s ease;
-      }
-      .line2{
-        width: 16px;
-        height: 2px;
-        background-color: #FFF;
-        position: absolute;
-        right: 10px;
-        top: 19px;
-        //transition: all 0.3s ease;
-      }
-      .line3{
-        width: 22px;
-        height: 2px;
-        background-color: #FFF;
-        position: absolute;
-        right: 10px;
-        top: 27px;
-        //transition: all 0.3s ease;
-      }
+    }//top_header close
+    #scrolltotop{
+        position:fixed; bottom:35%; right:0px;
+        a{display: block; background-color: #000;}
     }
-  }
+    #scrolltotop span{
+        font-family: 'Nanum Gothic',sans-serif;
+        width:55px; height:25px; display:block;
+        background:url("http://www.tkgroup.co.kr/kor/_Img/Layout/top-btn.png") no-repeat center 15px;
+        border-radius:3px;
+        color:#FFF; text-align: center;
+        padding-top: 30px;
+        font-size: 12px;
+        -webkit-transition:all 0.2s ease-out;
+        -moz-transition:all 0.2s ease-out;
+        -o-transition:all 0.2s ease-out;
+        -ms-transition:all 0.2s ease-out;
+        transition:all 0.4s ease-out;
+        }
+    #scrolltotop a:hover {
+        background-color: #008889;
+        transition:all 0.4s ease-out;
+    }
 }//nav close
-
-.slide{
-  font-family: 'Oswald','Calibri','Malgun Gothic', sans-serif;
-  height: 850px;
-  position: relative;
-  text-align: center;
-  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_bg.png') no-repeat;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-
-  .btn{
-    .next{
-      background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_next.png') no-repeat;
-      background-position: center;
-      position: absolute; top: 0; right:0;
-      width: 90px; height: 100%;
-      border: 0; outline: 0;
-      text-indent: -9999px;
-      transition: all 0.1s
-    }
-    .prev{
-      background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_prev.png') no-repeat;
-      background-position: center;
-      position: absolute; top: 50; left:0;
-      width: 90px; height: 100%;
-      border: 0; outline: 0;
-      text-indent: -9999px;
-      transition: all 0.1s
-    }
-  }
-  li{
-    display: inline-block;
-    a{
-      position: relative; top:770px;
-      z-index: 10;
-      display: block;
-      width: 7px; height: 7px;
-      border: 2px #FFF solid;
-      border-radius: 50%;
-      margin: 0 10px;
-    }
-    >div{
-      position: absolute; top:0; left:0;
-      width: 100%; height: 100%;
-      text-align: center;
-      display: none;
-    }
-    img{
-      position: relative;
-      top:200px;
-    }
-    cite{
-      font-size: 50px;
-      position: relative; top:100px;
-      margin-top: 50px;
-      font-style: normal;
-    }
-    cite, span{
-      display: block;
-      position: relative; top:200px;
-      text-transform: uppercase;
-      font-weight: 700;
-      color:#FFF;
-    }
-  }//li close
-  .on{
-    a{
-      background-color: #FFF;
-    }
-    div{display: block;}
-  }
+@keyframes longline {
+    from{width:22px;}
+    to{width:14px;}
 }
+@keyframes shortline {
+    from{width:16px;}
+    to{width:22px;}
+}
+.section_wrap{
+    #contents{
+        width: 100%; height: 1000px;
+        text-align: center;
+        background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_bg.png') no-repeat center;
+        background-size: cover;
+        .slide{
+            font-family: 'Oswald','Calibri','Malgun Gothic', sans-serif;
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            text-transform: uppercase;
+            .btn{
+                .next{
+                    background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_next.png') no-repeat center;
+                    position: absolute; top: 0; right:0;
+                    width: 90px; height: 100%;
+                    border: 0; outline: 0;
+                    text-indent: -9999px;
+                    transition: all 0.1s;
+                    cursor:pointer;
+                }
+                .prev{
+                    background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_prev.png') no-repeat center;
+                    position: absolute; top: 0; left:0;
+                    width: 90px; height: 100%;
+                    border: 0; outline: 0;
+                    text-indent: -9999px;
+                    transition: all 0.1s;
+                    cursor:pointer;
+                }
+            }
+            .center{
+                >div{
+                    position: relative;
+                    //img{width: 100%; height: 100%;}
+                }
+            }
+            .tt{
+                margin-top: 45px;
+                font-weight: bold;
+                color:#FFF; font-size: 52px;
+                display: block;
+                line-height: 1;
+            }
+            .in{
+                display: inline-block;
+                margin-top: 20px;
+                color:#FFF; font-size: 16px;
+                font-weight: 200;
+                line-height: 1;
+            }
+        }
+    }
+}
+
 
 footer{
-  position: relative;
-  height: 100%;
-  clear: both;
-  .top_foot_wrap{
-    height: 30px;
-    background-color: #191919;
-    padding: 20px 0;
     position: relative;
-
-    .top_foot{
-      display: inline-block;
-      position: absolute; left:50%;
-      margin-left: -380px;
-      a{
+    .foot1_bg{width: 100%; background-color: #191919;}
+    .top_foot_wrap{
+        max-width: 1200px; height: 70px;
+        margin: 0 auto;
         position: relative;
-        &:nth-child(2){
-          margin-left: 400px;
+        .top_foot{
+            text-align: center;
+            li{
+                width: 50%; float: left;
+                &:nth-child(1){
+                    span:before{
+                        width: 26px; height: 26px;
+                        content: "";
+                        background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat;
+                        position: absolute; top:23px; left: -6px;
+                    }
+                }
+                &:nth-child(2){
+                    span:before{
+                        width: 26px; height: 26px;
+                        content: "";
+                        background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat;
+                        position: absolute; top:23px; left: -6px;
+                    }
+                }
+            }
+            a{
+                position: relative;
+                line-height: 70px;
+                span{
+                    position: relative;
+                    display: inline-block;
+                    padding:0 30px;
+                    color:#FFF;
+                    font-size: 14px;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    i{margin-left: 25px;}
+                }
+                .txt{
+                    margin-left: 20px;
+                }
+            }
+        }//top_foot close
+    }//top_foot_wrap close
+    .down_foot_wrap{
+        background-color: #080808;
+        padding: 60px 0 80px 0;
+        .down_foot{
+            text-align: center;
+            .foot_logo{
+                display: inline-block;
+            }
+            .txt{
+                margin-top: 30px;
+                span{
+                    display: inline-block;
+                    color: #CCC;
+                    font-size: 14px;
+                }
+                .tel{display: inline-block;}
+                div{
+                    font-size: 11px;
+                    color: #535353;
+                    margin-top: 5px;
+                }
+            }
         }
-        span{
-          display: inline-block;
-          padding:0 30px;
-          color:#FFF;
-          font-size: 14px;
-          text-align: center;
-          &:hover{
-            text-decoration: underline;
-          }
+    }
+}
+@media screen and (max-width:1200px) {
+    #nav .top_header{
+      .gnb {
+        margin-left: 30px;
+        >ul>li>a {
+            font-size: 15px;
         }
-        .icon{
-          background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_arr.png') no-repeat right center;
-          &:before{
-            width: 26px;
-            height: 26px;
-            content: "";
-            background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat 0 center;
-            position: absolute; top:-2px; left: -8px;
-          }
-        }
-        .icon2{
-          background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_arr.png') no-repeat right center;
-          &:before{
-            width: 26px;
-            height: 26px;
-            content: "";
-            background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat 0 center;
-            position: absolute; top:-2px; left: -8px;
-          }
-        }
-        .txt{
-          margin-left: 20px;
-        }
-      }
-    }//top_foot close
-  }//top_foot_wrap close
-  .down_foot_wrap{
-    background-color: #080808;
-    padding: 60px 0 80px 0;
-    .down_foot{
-      text-align: center;
-      .foot_logo{
-        display: inline-block;
-      }
-      .txt{
-        margin-top: 30px;
-        span{
-          color: #CCC;
-          font-size: 14px;
-        }
-        div{
-          font-size: 11px;
-          color: #535353;
-          margin-top: 5px;
-        }
+        .last a, .last .snb_wrap{opacity: 0;}
       }
     }
-  }
+}
+
+@media screen and (max-width:1025px){
+    #nav .top_header{
+      .gnb {display: none;}
+    }
+}
+@media screen and (max-width:900px){
+    .section_wrap #contents{height: 900px;}
+    .section_wrap #contents .slide{
+        img{width: 75%; }
+        .tt{font-size: 40px;}
+    }
+}
+@media screen and (max-width:700px){
+    .section_wrap #contents{height: 800px;}
+    footer .top_foot_wrap .top_foot{
+        li{
+            a{display: block; margin: 15px 0; width: auto;}
+            a span{background: none; padding: 0 10px; font-size: 12px; line-height: 120%;}
+            a span i{display: none;}
+            &:nth-child(1) a span:before{
+                width: 30px; height: 34px;
+                background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat center;
+                top: -38px; left: 43px;
+            }
+            &:nth-child(2) a span:before{
+                width: 30px; height: 34px;
+                background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat center;
+                top: -38px; left: 63px;
+            }
+        }
+    }
+    footer .top_foot_wrap{height: 75px;}
+    footer .down_foot_wrap{padding: 60px 0;}
+}
+@media screen and (max-width: 480px) {
+    #nav .top_header h1.logo{height: 35px; width: 50px; left: 17px;}
+    .section_wrap #contents{height: 750px;}
+    footer .down_foot_wrap {
+        padding: 0 0 15px 0;
+        .down_foot .txt{margin-top: 15px; padding: 0 15px;}
+        .down_foot .txt span{font-size: 12px;}
+        .down_foot .foot_logo img{width: 48px;}
+    }
+    footer .top_foot_wrap .top_foot li a span{font-size: 11px;}
 }

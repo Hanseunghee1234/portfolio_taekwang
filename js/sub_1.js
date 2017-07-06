@@ -61,10 +61,41 @@ $(function(){
         lastScrollTop = st;
     });
 
+    $(function(){
+        $('.sub_nav li').eq(0).trigger('click');
+    })
     $('.sub_nav li').on({
         'click':function(){
             $(this).find('span.bgg').css('top','0')
             $(this).siblings().find('span.bgg').css('top','100%')
+        }
+    })
+    //-----------스크롤시 위로버튼 생성
+    $('#scrolltotop').hide();
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('#scrolltotop').fadeIn('slow');
+        } else {
+            $('#scrolltotop').fadeOut('slow');
+        }
+    });
+    $('#scrolltotop a').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+    ////////////////////////////////////////
+    /*$(window).scroll(function(){
+        var st = $(this).scrollTop();
+        if(st>1000){
+            $('.end_1 h2').stop().slideUp().css('opacity','1');
+        }
+    })*/
+    $('#nav2>ul>li>a').on({
+        'click':function(){
+            $('.hidden_slide').slideToggle();
         }
     })
 

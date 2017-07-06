@@ -27,10 +27,57 @@ html {
   position: relative;
 }
 header {
-  font-family: 'Oswald', 'Calibri', 'Malgun Gothic', sans-serif;
+  font-family: 'Oswald', 'Calibri', sans-serif;
 }
-body {
-  font-family: 'Malgun Gothic', sans-serif;
+@keyframes bar {
+  from {
+    left: 0px;
+    width: 0px;
+  }
+  to {
+    left: 48px;
+    width: 220px;
+  }
+}
+@keyframes barTwo {
+  from {
+    left: 48px;
+    width: 0px;
+  }
+  to {
+    left: 268px;
+    width: 220px;
+  }
+}
+@keyframes barThree {
+  from {
+    left: 268px;
+    width: 0px;
+  }
+  to {
+    left: 488px;
+    width: 220px;
+  }
+}
+@keyframes barFour {
+  from {
+    left: 488px;
+    width: 0px;
+  }
+  to {
+    left: 708px;
+    width: 220px;
+  }
+}
+@keyframes barFive {
+  from {
+    left: 708px;
+    width: 0px;
+  }
+  to {
+    left: 928px;
+    width: 220px;
+  }
 }
 #nav {
   width: 100%;
@@ -41,7 +88,7 @@ body {
 }
 #nav .bg {
   width: 100%;
-  height: 227px;
+  height: 205px;
   display: none;
   background-color: #FFF;
   position: absolute;
@@ -49,8 +96,17 @@ body {
   left: 0;
   z-index: -1;
 }
+#nav .bar {
+  position: absolute;
+  top: 63px;
+  left: 0;
+  border-bottom: 3px solid #008889;
+  width: 0px;
+  height: 14px;
+  overflow: hidden;
+}
 #nav .top_header {
-  max-width: 1100px;
+  max-width: 1200px;
   height: 80px;
   margin: 0 auto;
 }
@@ -67,20 +123,39 @@ body {
   height: 100%;
 }
 #nav .top_header .gnb {
+  width: 100%;
   height: 80px;
   float: left;
   display: inline-block;
+  text-transform: uppercase;
+  position: relative;
 }
 #nav .top_header .gnb > ul {
-  float: left;
+  display: block;
+  position: relative;
+  text-align: center;
 }
 #nav .top_header .gnb > ul > li {
-  float: left;
+  display: inline-block;
   width: 220px;
-  height: 77px;
   font-size: 16px;
   font-weight: 600;
-  text-align: center;
+  margin-left: -3px;
+}
+#nav .top_header .gnb > ul > li:hover .bar {
+  animation: bar 0.3s ease-out both normal;
+}
+#nav .top_header .gnb > ul > li:nth-child(2):hover .bar {
+  animation: barTwo 0.3s ease-out both normal;
+}
+#nav .top_header .gnb > ul > li:nth-child(3):hover .bar {
+  animation: barThree 0.3s ease-out both normal;
+}
+#nav .top_header .gnb > ul > li:nth-child(4):hover .bar {
+  animation: barFour 0.3s ease-out both normal;
+}
+#nav .top_header .gnb > ul > li:nth-child(5):hover .bar {
+  animation: barFive 0.3s ease-out both normal;
 }
 #nav .top_header .gnb > ul > li > a {
   display: inline-block;
@@ -102,12 +177,9 @@ body {
   margin: 0 auto;
   border-left: 1px #ededed solid;
 }
-#nav .top_header .gnb .snb_wrap:last-child {
-  border-right: 1px #ededed solid;
-}
 #nav .top_header .gnb .snb_wrap .snb {
-  max-width: 1100px;
-  height: 227px;
+  max-width: 1200px;
+  height: 205px;
   overflow: hidden;
   z-index: 111;
   position: relative;
@@ -123,7 +195,7 @@ body {
   font-size: 14px;
 }
 #nav .top_header .gnb .snb_wrap .snb ul li:first-child {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 #nav .top_header .gnb .snb_wrap .snb ul li:hover {
   transition: all ease-in 0.3s;
@@ -134,6 +206,7 @@ body {
   height: 40px;
   color: #000;
   font-weight: normal;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 #nav .top_header .gnb .snb_wrap .snb ul li a:hover {
   border-bottom: 1px #008889 solid;
@@ -264,6 +337,36 @@ body {
   position: absolute;
   right: 10px;
   top: 27px;
+}
+#nav #scrolltotop {
+  position: fixed;
+  bottom: 35%;
+  right: 0px;
+}
+#nav #scrolltotop a {
+  display: block;
+  background-color: #000;
+}
+#nav #scrolltotop span {
+  font-family: 'Nanum Gothic', sans-serif;
+  width: 55px;
+  height: 25px;
+  display: block;
+  background: url("http://www.tkgroup.co.kr/kor/_Img/Layout/top-btn.png") no-repeat center 15px;
+  border-radius: 3px;
+  color: #FFF;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 12px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.4s ease-out;
+}
+#nav #scrolltotop a:hover {
+  background-color: #008889;
+  transition: all 0.4s ease-out;
 }
 @keyframes longline {
   from {
@@ -801,13 +904,14 @@ footer .down_foot_wrap .down_foot .txt div {
 }
 @media screen and (max-width: 1200px) {
   #nav .top_header .gnb {
-    margin-left: 45px;
+    margin-left: 30px;
   }
   #nav .top_header .gnb > ul > li > a {
     font-size: 15px;
   }
-  #nav .top_header .gnb > ul > li > a:last-child {
-    display: none;
+  #nav .top_header .gnb .last a,
+  #nav .top_header .gnb .last .snb_wrap {
+    opacity: 0;
   }
   .section_wrap #vd {
     height: 780px;

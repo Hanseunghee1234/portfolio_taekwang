@@ -7,7 +7,7 @@ a{text-decoration: none; color:black;}
 ul,ol,li{list-style: none;}
 html, body{width: 100%; height: 100%; font-size: 100%;}
 html{overflow-x: hidden;}
-@hg:227px;
+@hg:205px;
 @mhg:647px;
 .global(){
     height: 574px;
@@ -32,8 +32,28 @@ html{overflow-x: hidden;}
     margin-left: -230px;
 }
 .wrap{position: relative;}
-header{font-family: 'Oswald','Calibri','Malgun Gothic', sans-serif;}
-body{font-family: 'Malgun Gothic', sans-serif;}
+header{font-family:'Oswald','Calibri', sans-serif;}
+
+@keyframes bar {
+    from{left:0px; width: 0px;}
+    to{left:48px; width: 220px;}
+}
+@keyframes barTwo {
+    from{left:48px; width: 0px;}
+    to{left:268px; width: 220px;}
+}
+@keyframes barThree {
+    from{left:268px; width: 0px;}
+    to{left:488px; width: 220px;}
+}
+@keyframes barFour {
+    from{left:488px; width: 0px;}
+    to{left:708px; width: 220px;}
+}
+@keyframes barFive {
+    from{left:708px; width: 0px;}
+    to{left:928px; width: 220px;}
+}
 #nav{
     width: 100%; height: 80px;
     background-color: #000;
@@ -45,8 +65,15 @@ body{font-family: 'Malgun Gothic', sans-serif;}
         position: absolute; top:80px; left: 0;
         z-index: -1;
     }
+    .bar{
+        position: absolute; top: 63px; left: 0;
+        border-bottom: 3px solid #008889;
+        width: 0px; height: 14px;
+        overflow: hidden;
+        //transition: 0.4s ease-out;
+    }
     .top_header{
-        max-width: 1100px; height: 80px;
+        max-width: 1200px; height: 80px;
         margin: 0 auto;
         h1.logo{
             height: 43px; width: 63px;
@@ -55,17 +82,44 @@ body{font-family: 'Malgun Gothic', sans-serif;}
             img{width: 100%; height: 100%;}
         }
         .gnb{
-            height: 80px;
+            width: 100%;height: 80px;
             float: left;
             display: inline-block;
+            text-transform: uppercase;
+            position: relative;
             >ul{
-                float: left;
+                display: block;
+                position: relative;
+                text-align: center;
                 >li{
-                    float: left;
-                    width: 220px; height: 77px;
+                    display: inline-block;
+                    width: 220px;
                     font-size: 16px;
                     font-weight: 600;
-                    text-align: center;
+                    margin-left: -3px;
+                    &:hover{
+                        .bar{animation: bar 0.3s ease-out both normal;}
+                    }
+                    &:nth-child(2){
+                        &:hover{
+                            .bar{animation: barTwo 0.3s ease-out both normal;}
+                        }
+                    }
+                    &:nth-child(3){
+                        &:hover{
+                            .bar{animation: barThree 0.3s ease-out both normal;}
+                        }
+                    }
+                    &:nth-child(4){
+                        &:hover{
+                            .bar{animation: barFour 0.3s ease-out both normal;}
+                        }
+                    }
+                    &:nth-child(5){
+                        &:hover{
+                            .bar{animation: barFive 0.3s ease-out both normal;}
+                        }
+                    }
                     >a{
                         display: inline-block;
                         height: 80px;
@@ -85,9 +139,9 @@ body{font-family: 'Malgun Gothic', sans-serif;}
                 width: 100%;
                 margin: 0 auto;
                 border-left: 1px #ededed solid;
-                &:last-child{border-right: 1px #ededed solid;}
+                //&:last-child{border-right: 1px #ededed solid;}
                 .snb{
-                    max-width: 1100px;
+                    max-width: 1200px;
                     height: @hg;
                     overflow: hidden;
                     z-index: 111;
@@ -99,7 +153,7 @@ body{font-family: 'Malgun Gothic', sans-serif;}
                             width: 220px; height: 40px;
                             float: none;
                             font-size: 14px;
-                            &:first-child{margin-top: 30px;}
+                            &:first-child{margin-top: 20px;}
                             &:hover{
                                 transition: all ease-in 0.3s;
                             }
@@ -109,6 +163,7 @@ body{font-family: 'Malgun Gothic', sans-serif;}
                                 height: 40px;
                                 color:#000;
                                 font-weight: normal;
+                                font-family: 'Nanum Gothic',sans-serif;
                                 &:hover{
                                     border-bottom: 1px #008889 solid;
                                     color:#008889;
@@ -207,7 +262,6 @@ body{font-family: 'Malgun Gothic', sans-serif;}
                     position: absolute;
                     right: 10px;
                     top: 11px;
-                    //transition: all 0.3s ease;
                 }
                 .line2{
                     width: 16px;
@@ -216,7 +270,6 @@ body{font-family: 'Malgun Gothic', sans-serif;}
                     position: absolute;
                     right: 10px;
                     top: 19px;
-                    //transition: all 0.3s ease;
                 }
                 .line3{
                     width: 22px;
@@ -225,11 +278,32 @@ body{font-family: 'Malgun Gothic', sans-serif;}
                     position: absolute;
                     right: 10px;
                     top: 27px;
-                    //transition: all 0.3s ease;
                 }
             }
         }
     }//top_header close
+    #scrolltotop{
+        position:fixed; bottom:35%; right:0px;
+        a{display: block; background-color: #000;}
+    }
+    #scrolltotop span{
+        font-family: 'Nanum Gothic',sans-serif;
+        width:55px; height:25px; display:block;
+        background:url("http://www.tkgroup.co.kr/kor/_Img/Layout/top-btn.png") no-repeat center 15px;
+        border-radius:3px;
+        color:#FFF; text-align: center;
+        padding-top: 30px;
+        font-size: 12px;
+        -webkit-transition:all 0.2s ease-out;
+        -moz-transition:all 0.2s ease-out;
+        -o-transition:all 0.2s ease-out;
+        -ms-transition:all 0.2s ease-out;
+        transition:all 0.4s ease-out;
+        }
+    #scrolltotop a:hover {
+        background-color: #008889;
+        transition:all 0.4s ease-out;
+    }
 }//nav close
 @keyframes longline {
     from{width:22px;}
@@ -660,11 +734,11 @@ footer{
 @media screen and (max-width:1200px) {
     #nav .top_header{
       .gnb {
-          margin-left: 45px;
+        margin-left: 30px;
         >ul>li>a {
             font-size: 15px;
-            &:last-child{display: none;}
         }
+        .last a, .last .snb_wrap{opacity: 0;}
       }
     }
     .section_wrap{

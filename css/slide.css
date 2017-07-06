@@ -18,146 +18,297 @@ body {
   height: 100%;
 }
 .wrap {
-  margin: 0 auto;
+  position: relative;
 }
 header {
-  font-family: 'Oswald', 'Calibri', 'Malgun Gothic', sans-serif;
+  font-family: 'Oswald', 'Malgun Gothic', sans-serif;
+}
+@keyframes bar {
+  from {
+    left: 0px;
+    width: 0px;
+  }
+  to {
+    left: 48px;
+    width: 220px;
+  }
+}
+@keyframes barTwo {
+  from {
+    left: 48px;
+    width: 0px;
+  }
+  to {
+    left: 268px;
+    width: 220px;
+  }
+}
+@keyframes barThree {
+  from {
+    left: 268px;
+    width: 0px;
+  }
+  to {
+    left: 488px;
+    width: 220px;
+  }
+}
+@keyframes barFour {
+  from {
+    left: 488px;
+    width: 0px;
+  }
+  to {
+    left: 708px;
+    width: 220px;
+  }
+}
+@keyframes barFive {
+  from {
+    left: 708px;
+    width: 0px;
+  }
+  to {
+    left: 928px;
+    width: 220px;
+  }
+}
+#nav {
   width: 100%;
   height: 80px;
-  z-index: 2000;
-  margin: 0 auto;
-  text-align: center;
+  background-color: #000;
   position: fixed;
-  top: 0;
-  left: 0;
+  z-index: 99;
 }
-.nav {
+#nav .bg {
   width: 100%;
-  height: 100%;
-  background-color: black;
-  position: relative;
+  height: 227px;
+  display: none;
+  background-color: #FFF;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: -1;
+}
+#nav .bar {
+  position: absolute;
+  top: 63px;
+  left: 0;
+  border-bottom: 3px solid #008889;
+  width: 0px;
+  height: 14px;
   overflow: hidden;
 }
-.nav .logo {
+#nav .top_header {
+  max-width: 1200px;
+  height: 80px;
+  margin: 0 auto;
+}
+#nav .top_header h1.logo {
   height: 43px;
   width: 63px;
   position: absolute;
-  left: 27px;
+  left: 21px;
   top: 18px;
   z-index: 1100;
 }
-.nav .menu {
-  display: inline-block;
+#nav .top_header h1.logo img {
+  width: 100%;
+  height: 100%;
 }
-.nav .menu .gnb {
+#nav .top_header .gnb {
+  width: 100%;
   height: 80px;
-  margin: 0 auto;
-}
-.nav .menu .gnb > li {
-  width: 220px;
-  font-weight: 600;
-  font-size: 16px;
   float: left;
-  text-align: center;
-  /*&:hover{
-            color:#008889;
-            border-bottom: 3px #008889 solid;
-          }*/
+  display: inline-block;
+  text-transform: uppercase;
+  position: relative;
 }
-.nav .menu .gnb > li a {
+#nav .top_header .gnb > ul {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+#nav .top_header .gnb > ul > li {
+  display: inline-block;
+  width: 220px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+#nav .top_header .gnb > ul > li:hover .bar {
+  animation: bar 0.3s ease-out both normal;
+}
+#nav .top_header .gnb > ul > li:nth-child(2):hover .bar {
+  animation: barTwo 0.3s ease-out both normal;
+}
+#nav .top_header .gnb > ul > li:nth-child(3):hover .bar {
+  animation: barThree 0.3s ease-out both normal;
+}
+#nav .top_header .gnb > ul > li:nth-child(4):hover .bar {
+  animation: barFour 0.3s ease-out both normal;
+}
+#nav .top_header .gnb > ul > li:nth-child(5):hover .bar {
+  animation: barFive 0.3s ease-out both normal;
+}
+#nav .top_header .gnb > ul > li > a {
+  display: inline-block;
   height: 80px;
   line-height: 80px;
-  color: white;
+  color: #FFF;
   white-space: nowrap;
   text-overflow: ellipsis;
   letter-spacing: 0.04em;
 }
-.nav .menu .gnb .snb {
-  background-color: white;
-  width: 100%;
-  display: block;
-  text-align: center;
-}
-.nav .menu .gnb .snb a {
-  color: black;
-  line-height: 35px;
-}
-.nav .menu .gnb .snb a:hover {
+#nav .top_header .gnb > ul > li > a:hover {
   color: #008889;
-  transition: all ease-in 0.1s;
+  transition: all ease-in 0.3s;
 }
-.nav .menu .gnb .snb .first {
-  border-left: 1px #CCC solid;
+#nav .top_header .gnb .snb_wrap {
+  display: none;
+  background-color: #FFF;
+  width: 100%;
+  margin: 0 auto;
+  border-left: 1px #ededed solid;
 }
-.nav .menu .gnb .snb ul {
+#nav .top_header .gnb .snb_wrap .snb {
+  max-width: 1200px;
+  height: 227px;
+  overflow: hidden;
+  z-index: 111;
+  position: relative;
+  margin: 0 auto;
+}
+#nav .top_header .gnb .snb_wrap .snb ul {
   display: inline-block;
-  border-right: 1px #CCC solid;
 }
-.nav .menu .gnb .snb ul li {
+#nav .top_header .gnb .snb_wrap .snb ul li {
   width: 220px;
-  font-size: 12px;
-  line-height: 35px;
+  height: 40px;
+  float: none;
+  font-size: 14px;
 }
-.nav .menu .gnb .snb ul li:hover {
-  border-bottom: 2px #008889 solid;
-  transition: all ease-in 0.1s;
+#nav .top_header .gnb .snb_wrap .snb ul li:first-child {
+  margin-top: 20px;
 }
-.nav .menu_btn {
-  z-index: 5100;
+#nav .top_header .gnb .snb_wrap .snb ul li:hover {
+  transition: all ease-in 0.3s;
+}
+#nav .top_header .gnb .snb_wrap .snb ul li a {
+  display: block;
+  line-height: 40px;
+  height: 40px;
+  color: #000;
+  font-weight: normal;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+#nav .top_header .gnb .snb_wrap .snb ul li a:hover {
+  border-bottom: 1px #008889 solid;
+  color: #008889;
+  transition: all ease-in 0.3s;
+}
+#nav .top_header .gnb2 #gnb_right {
+  width: 240px;
+  height: 100%;
+  background-color: #FFF;
+  position: fixed;
+  right: -240px;
+  transition: 0.3s ease-out;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 3000;
+}
+#nav .top_header .gnb2 #gnb_right li {
+  display: block;
+  width: 100%;
+  border-bottom: 1px #CCC solid;
+  float: left;
+}
+#nav .top_header .gnb2 #gnb_right li a {
+  display: block;
+  font-size: 14px;
+  line-height: 1.3em;
+}
+#nav .top_header .gnb2 #gnb_right li a span {
+  display: block;
+  padding: 26px 25px 24px 17px;
+}
+#nav .top_header .gnb2 #gnb_right li a i {
   position: absolute;
-  top: 30%;
   right: 10px;
+}
+#nav .top_header .gnb2 #gnb_right .hidden_slide {
+  display: none;
+}
+#nav .top_header .gnb2 #gnb_right .hidden_slide li {
+  border: 0;
+  border-top: 1px #ccc solid;
+  background-color: #eee;
+  padding: 10px 25px 10px 17px;
+}
+#nav .top_header .gnb2 #gnb_right .hidden_slide li a {
+  font-size: 14px;
+}
+#nav .top_header .gnb2 #gnb_right .hidden_slide li a:hover {
+  color: #666;
+  transition: 0.3s;
+}
+#nav .top_header .menu_btn {
+  z-index: 999;
+  position: absolute;
+  top: 27px;
+  right: 8px;
   padding-right: 50px;
 }
-.nav .menu_btn span {
+#nav .top_header .menu_btn span {
   display: inline-block;
+  text-align: center;
+}
+#nav .top_header .menu_btn .home {
+  width: 40px;
+  height: 35px;
+  background: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png') no-repeat center;
+  background-color: #222;
+  position: absolute;
+  top: -3px;
+  right: 99px;
+}
+#nav .top_header .menu_btn .home:hover {
+  opacity: 0.9;
+  background-color: #555;
+  transition: all ease 0.3s;
+}
+#nav .top_header .menu_btn .eng {
   width: 45px;
   height: 35px;
-}
-.nav .menu_btn .home {
-  text-align: center;
-  background: black;
-  background-image: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  top: -3px;
-  right: 95px;
-}
-.nav .menu_btn .home:hover {
-  opacity: 0.9;
-  background-color: #666;
-  transition: all ease 0.3s;
-}
-.nav .menu_btn .eng {
-  display: inline-block;
-  background-color: #008889;
+  background-color: #086c6d;
   font-size: 13px;
-  color: white;
-  text-align: center;
+  color: #FFF;
   line-height: 35px;
-  opacity: 0.8;
   transition: all ease 0.3s;
   position: absolute;
   top: -3px;
-  right: 50px;
+  right: 54px;
+  font-family: 'Roboto', sans-serif;
 }
-.nav .menu_btn .eng:hover {
-  opacity: 1;
+#nav .top_header .menu_btn .eng:hover {
+  background-color: #199394;
 }
-.nav .menu_btn .lines {
+#nav .top_header .menu_btn .lines {
   position: absolute;
   top: -3px;
   right: 5px;
+  width: 40px;
+  height: 36px;
 }
-.nav .menu_btn .lines:hover .line1,
-.nav .menu_btn .lines:hover .line3 {
+#nav .top_header .menu_btn .lines:hover .line1,
+#nav .top_header .menu_btn .lines:hover .line3 {
   animation: longline 1s ease-out both infinite alternate;
 }
-.nav .menu_btn .lines:hover .line2 {
+#nav .top_header .menu_btn .lines:hover .line2 {
   animation: shortline 1s ease-out both infinite alternate;
 }
-.nav .menu_btn .lines .line1 {
+#nav .top_header .menu_btn .lines .line1 {
   width: 22px;
   height: 2px;
   background: #FFF;
@@ -165,7 +316,7 @@ header {
   right: 10px;
   top: 11px;
 }
-.nav .menu_btn .lines .line2 {
+#nav .top_header .menu_btn .lines .line2 {
   width: 16px;
   height: 2px;
   background-color: #FFF;
@@ -173,7 +324,7 @@ header {
   right: 10px;
   top: 19px;
 }
-.nav .menu_btn .lines .line3 {
+#nav .top_header .menu_btn .lines .line3 {
   width: 22px;
   height: 2px;
   background-color: #FFF;
@@ -181,18 +332,68 @@ header {
   right: 10px;
   top: 27px;
 }
-.slide {
-  font-family: 'Oswald', 'Calibri', 'Malgun Gothic', sans-serif;
-  height: 850px;
-  text-align: center;
-  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_bg.png') no-repeat;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
+#nav #scrolltotop {
+  position: fixed;
+  bottom: 35%;
+  right: 0px;
 }
-.slide .btn .next {
-  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_next.png') no-repeat;
-  background-position: center;
+#nav #scrolltotop a {
+  display: block;
+  background-color: #000;
+}
+#nav #scrolltotop span {
+  font-family: 'Nanum Gothic', sans-serif;
+  width: 55px;
+  height: 25px;
+  display: block;
+  background: url("http://www.tkgroup.co.kr/kor/_Img/Layout/top-btn.png") no-repeat center 15px;
+  border-radius: 3px;
+  color: #FFF;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 12px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.4s ease-out;
+}
+#nav #scrolltotop a:hover {
+  background-color: #008889;
+  transition: all 0.4s ease-out;
+}
+@keyframes longline {
+  from {
+    width: 22px;
+  }
+  to {
+    width: 14px;
+  }
+}
+@keyframes shortline {
+  from {
+    width: 16px;
+  }
+  to {
+    width: 22px;
+  }
+}
+.section_wrap #contents {
+  width: 100%;
+  height: 1000px;
+  text-align: center;
+  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_bg.png') no-repeat center;
+  background-size: cover;
+}
+.section_wrap #contents .slide {
+  font-family: 'Oswald', 'Calibri', 'Malgun Gothic', sans-serif;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+.section_wrap #contents .slide .btn .next {
+  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_next.png') no-repeat center;
   position: absolute;
   top: 0;
   right: 0;
@@ -202,12 +403,12 @@ header {
   outline: 0;
   text-indent: -9999px;
   transition: all 0.1s;
+  cursor: pointer;
 }
-.slide .btn .prev {
-  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_prev.png') no-repeat;
-  background-position: center;
+.section_wrap #contents .slide .btn .prev {
+  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_prev.png') no-repeat center;
   position: absolute;
-  top: 50;
+  top: 0;
   left: 0;
   width: 90px;
   height: 100%;
@@ -215,112 +416,81 @@ header {
   outline: 0;
   text-indent: -9999px;
   transition: all 0.1s;
+  cursor: pointer;
 }
-.slide li {
-  display: inline-block;
-}
-.slide li a {
+.section_wrap #contents .slide .center > div {
   position: relative;
-  top: 770px;
-  z-index: 10;
-  display: block;
-  width: 7px;
-  height: 7px;
-  border: 2px #FFF solid;
-  border-radius: 50%;
-  margin: 0 10px;
 }
-.slide li > div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  display: none;
-}
-.slide li img {
-  position: relative;
-  top: 200px;
-}
-.slide li cite {
-  font-size: 50px;
-  position: relative;
-  top: 100px;
-  margin-top: 50px;
-  font-style: normal;
-}
-.slide li cite,
-.slide li span {
-  display: block;
-  position: relative;
-  top: 200px;
-  text-transform: uppercase;
-  font-weight: 700;
+.section_wrap #contents .slide .tt {
+  margin-top: 45px;
+  font-weight: bold;
   color: #FFF;
-}
-.slide .on a {
-  background-color: #FFF;
-}
-.slide .on div {
+  font-size: 52px;
   display: block;
+  line-height: 1;
+}
+.section_wrap #contents .slide .in {
+  display: inline-block;
+  margin-top: 20px;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1;
 }
 footer {
   position: relative;
-  height: 100%;
-  clear: both;
+}
+footer .foot1_bg {
+  width: 100%;
+  background-color: #191919;
 }
 footer .top_foot_wrap {
-  height: 30px;
-  background-color: #191919;
-  padding: 20px 0;
+  max-width: 1200px;
+  height: 70px;
+  margin: 0 auto;
   position: relative;
 }
 footer .top_foot_wrap .top_foot {
-  display: inline-block;
+  text-align: center;
+}
+footer .top_foot_wrap .top_foot li {
+  width: 50%;
+  float: left;
+}
+footer .top_foot_wrap .top_foot li:nth-child(1) span:before {
+  width: 26px;
+  height: 26px;
+  content: "";
+  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat;
   position: absolute;
-  left: 50%;
-  margin-left: -380px;
+  top: 23px;
+  left: -6px;
+}
+footer .top_foot_wrap .top_foot li:nth-child(2) span:before {
+  width: 26px;
+  height: 26px;
+  content: "";
+  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat;
+  position: absolute;
+  top: 23px;
+  left: -6px;
 }
 footer .top_foot_wrap .top_foot a {
   position: relative;
-}
-footer .top_foot_wrap .top_foot a:nth-child(2) {
-  margin-left: 400px;
+  line-height: 70px;
 }
 footer .top_foot_wrap .top_foot a span {
+  position: relative;
   display: inline-block;
   padding: 0 30px;
   color: #FFF;
   font-size: 14px;
-  text-align: center;
 }
 footer .top_foot_wrap .top_foot a span:hover {
   text-decoration: underline;
 }
-footer .top_foot_wrap .top_foot a .icon {
-  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_arr.png') no-repeat right center;
-}
-footer .top_foot_wrap .top_foot a .icon:before {
-  width: 26px;
-  height: 26px;
-  content: "";
-  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat 0 center;
-  position: absolute;
-  top: -2px;
-  left: -8px;
-}
-footer .top_foot_wrap .top_foot a .icon2 {
-  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_arr.png') no-repeat right center;
-}
-footer .top_foot_wrap .top_foot a .icon2:before {
-  width: 26px;
-  height: 26px;
-  content: "";
-  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat 0 center;
-  position: absolute;
-  top: -2px;
-  left: -8px;
+footer .top_foot_wrap .top_foot a span i {
+  margin-left: 25px;
 }
 footer .top_foot_wrap .top_foot a .txt {
   margin-left: 20px;
@@ -339,11 +509,108 @@ footer .down_foot_wrap .down_foot .txt {
   margin-top: 30px;
 }
 footer .down_foot_wrap .down_foot .txt span {
+  display: inline-block;
   color: #CCC;
   font-size: 14px;
+}
+footer .down_foot_wrap .down_foot .txt .tel {
+  display: inline-block;
 }
 footer .down_foot_wrap .down_foot .txt div {
   font-size: 11px;
   color: #535353;
   margin-top: 5px;
+}
+@media screen and (max-width: 1200px) {
+  #nav .top_header .gnb {
+    margin-left: 30px;
+  }
+  #nav .top_header .gnb > ul > li > a {
+    font-size: 15px;
+  }
+  #nav .top_header .gnb .last a,
+  #nav .top_header .gnb .last .snb_wrap {
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 1025px) {
+  #nav .top_header .gnb {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .section_wrap #contents {
+    height: 900px;
+  }
+  .section_wrap #contents .slide img {
+    width: 75%;
+  }
+  .section_wrap #contents .slide .tt {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .section_wrap #contents {
+    height: 800px;
+  }
+  footer .top_foot_wrap .top_foot li a {
+    display: block;
+    margin: 15px 0;
+    width: auto;
+  }
+  footer .top_foot_wrap .top_foot li a span {
+    background: none;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 120%;
+  }
+  footer .top_foot_wrap .top_foot li a span i {
+    display: none;
+  }
+  footer .top_foot_wrap .top_foot li:nth-child(1) a span:before {
+    width: 30px;
+    height: 34px;
+    background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat center;
+    top: -38px;
+    left: 43px;
+  }
+  footer .top_foot_wrap .top_foot li:nth-child(2) a span:before {
+    width: 30px;
+    height: 34px;
+    background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat center;
+    top: -38px;
+    left: 63px;
+  }
+  footer .top_foot_wrap {
+    height: 75px;
+  }
+  footer .down_foot_wrap {
+    padding: 60px 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  #nav .top_header h1.logo {
+    height: 35px;
+    width: 50px;
+    left: 17px;
+  }
+  .section_wrap #contents {
+    height: 750px;
+  }
+  footer .down_foot_wrap {
+    padding: 0 0 15px 0;
+  }
+  footer .down_foot_wrap .down_foot .txt {
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+  footer .down_foot_wrap .down_foot .txt span {
+    font-size: 12px;
+  }
+  footer .down_foot_wrap .down_foot .foot_logo img {
+    width: 48px;
+  }
+  footer .top_foot_wrap .top_foot li a span {
+    font-size: 11px;
+  }
 }
