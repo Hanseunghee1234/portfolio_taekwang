@@ -267,7 +267,7 @@ header {
 #nav .top_header .menu_btn .home {
   width: 40px;
   height: 35px;
-  background: url('http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png') no-repeat center;
+  background: url('../images/sub2/home-ico.png') no-repeat center;
   background-color: #222;
   position: absolute;
   top: -3px;
@@ -346,7 +346,7 @@ header {
   width: 55px;
   height: 25px;
   display: block;
-  background: url("http://www.tkgroup.co.kr/kor/_Img/Layout/top-btn.png") no-repeat center 15px;
+  background: url("../images/sub2/top-btn.png") no-repeat center 15px;
   border-radius: 3px;
   color: #FFF;
   text-align: center;
@@ -382,7 +382,7 @@ header {
   width: 100%;
   height: 1000px;
   text-align: center;
-  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_bg.png') no-repeat center;
+  background: url('../images/sub2/portfolio_bg.png') no-repeat center;
   background-size: cover;
 }
 .section_wrap #contents .slide {
@@ -393,7 +393,7 @@ header {
   text-transform: uppercase;
 }
 .section_wrap #contents .slide .btn .next {
-  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_next.png') no-repeat center;
+  background: url('../images/sub2/portfolio_next.png') no-repeat center;
   position: absolute;
   top: 0;
   right: 0;
@@ -406,7 +406,7 @@ header {
   cursor: pointer;
 }
 .section_wrap #contents .slide .btn .prev {
-  background: url('http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_prev.png') no-repeat center;
+  background: url('../images/sub2/portfolio_prev.png') no-repeat center;
   position: absolute;
   top: 0;
   left: 0;
@@ -461,7 +461,7 @@ footer .top_foot_wrap .top_foot li:nth-child(1) span:before {
   width: 26px;
   height: 26px;
   content: "";
-  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat;
+  background: url('../images/sub2/ftoplink_ico01.png') no-repeat;
   position: absolute;
   top: 23px;
   left: -6px;
@@ -470,7 +470,7 @@ footer .top_foot_wrap .top_foot li:nth-child(2) span:before {
   width: 26px;
   height: 26px;
   content: "";
-  background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat;
+  background: url('../images/sub2/ftoplink_ico02.png') no-repeat;
   position: absolute;
   top: 23px;
   left: -6px;
@@ -570,14 +570,14 @@ footer .down_foot_wrap .down_foot .txt div {
   footer .top_foot_wrap .top_foot li:nth-child(1) a span:before {
     width: 30px;
     height: 34px;
-    background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png') no-repeat center;
+    background: url('../images/sub2/ftoplink_ico01.png') no-repeat center;
     top: -38px;
     left: 43px;
   }
   footer .top_foot_wrap .top_foot li:nth-child(2) a span:before {
     width: 30px;
     height: 34px;
-    background: url('http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png') no-repeat center;
+    background: url('../images/sub2/ftoplink_ico02.png') no-repeat center;
     top: -38px;
     left: 63px;
   }
